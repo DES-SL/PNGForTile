@@ -1,0 +1,26 @@
+ The simple program to create PNG images from stamps
+ stored in multy extension fits file created by MakeCoaddCutouts.py program.
+ It is also an example of how to work with such a file.
+ Input parameters are: -i <input fits file with tile images>
+                       -p <PNG parameters file>
+ An example of the PNG parameters file is as follow:
+sCutMin=0    # number of background sigmas subtracted from image
+sCutMax=500  # not used
+satLevel=0.8 # saturation level of resulting image
+enhLevel=0.2 # enhansement of the blue color factor
+Qval=3.0     # Q factor of the scaling function
+alpha=0.03   # alpha value of the scaling function
+Rcor=0.8     # correction factors on separate bands
+Gcor=1.4
+Icor=1.
+MakeTag=1    # if 1 PNG image will contain a tag, if 0 - no tags
+
+
+Example of running the program:
+
+./ProducePNGForTile.py -i DES0005-0041_cutouts.fits -p PNG.conf
+
+This will create PNG cutout stamps for objects in the DES0005-0041_cutouts.fits
+file in directory gallery/
+
+ By N. Kuropatkin  06/21 2016
